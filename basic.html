@@ -12,7 +12,7 @@
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="asetclient/musik.mp3" type="audio/mpeg">
+        <source src="music/Lagu.mp3" type="audio/mpeg">
     </audio>
 
     <div class="top-container">
@@ -110,7 +110,10 @@
         AOS.init({ duration: 1000 });
         window.addEventListener('click', () => {
             const music = document.getElementById('bgMusic');
-            if (music.paused) { music.volume = 0.3; music.play(); }
+            if (music.paused) { 
+                music.volume = 0.4;
+                music.currentTime = 15;
+                music.play(); }
         }, { once: true });
     </script>
 </body>
