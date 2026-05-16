@@ -1,0 +1,406 @@
+/* ==========================================================================
+   1. RESET & RESPONSIVE TEMPLATE (MOBILE-FIRST LOCK)
+   ========================================================================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f4f3ef;
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.top-container,
+.main-container {
+    max-width: 480px;      
+    margin: 0 auto;        
+    width: 100%;           
+    background-color: #ffffff;
+    box-shadow: 0 0 40px rgba(138, 109, 59, 0.1); 
+    box-sizing: border-box;
+    position: relative;
+}
+
+.top-container {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)), url('../img/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* STRUKTUR AWAL: Tetap menggunakan fixed background langsung di main-container */
+.main-container {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('../img/img5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Membuat background diam saat di-scroll */
+}
+
+.slideshow-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 24px; /* Perbaikan: Mengubah dari '1x' menjadi '40px' agar jarak atas-bawah responsive */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hero-header {
+    margin-top: 15px; /* Perbaikan: Memberi ruang bernapas sedikit dari batas atas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInDown 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Teks Elegan Pembuka Nama */
+.gold-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #e5c158; 
+    margin-bottom: 0px;
+    opacity: 0.95;
+}
+
+/* Tipografi Nama Pengantin Utama */
+.couple-nickname {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; 
+    font-weight: 400; 
+    font-style: italic;
+    line-height: 1.2; 
+    margin: 20px 0;
+    color: #e5c158;
+    text-align: center;
+    padding: 0 10px;  
+    box-sizing: border-box; 
+    display: contents;
+    width: 100%;
+}
+
+/* Tanggal dengan Aksen Garis Minimalis */
+.wedding-date {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 5px;
+    color: #ffffff;
+    margin-top: 2px;
+    padding: 6px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.wedding-date::before,
+.wedding-date::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+}
+
+.wedding-date::before { top: 0; }
+.wedding-date::after { bottom: 0; }
+
+/* Wadah Teks Mutiara / Kutipan */
+.hero-quotes {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.quote-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.7;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.quote-source {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #e5c158;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   3. KONTEN UTAMA (MAIN CONTAINER CONTENT)
+   ========================================================================== */
+.main-container section {
+    padding: 65px 24px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* --- Teks Keagamaan Pembuka --- */
+.opening-text .bismillah {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #bfa054; 
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.opening-text p {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.opening-text .opening-statement {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+/* --- Biodata / Profil Pengantin --- */
+.profile-section {
+    background-color: rgba(250, 248, 245, 0.93); 
+    width: 100%; 
+    max-width: 400px;           
+    margin: 10px auto;          
+    padding: 40px 20px;         
+    border-radius: 16px;        
+    border: 1px solid #eae6df;  
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.child-name-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #8a6d3b;
+    margin-bottom: 6px;
+}
+
+.parents-info {
+    font-size: 0.85rem;
+    color: #777777;
+    font-style: italic;
+    margin-top: 0;
+}
+
+.ampersand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: #d4af37;
+    margin: 22px 0;
+}
+
+/* --- Detail Waktu & Agenda --- */
+.event-section .event-intro {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #d1d1d1;
+    margin-bottom: 35px;
+}
+
+.event-block {
+    background: rgba(250, 248, 245, 0.95);
+    border: 1px solid #eae6df;
+    padding: 30px 20px;
+    border-radius: 16px;
+    margin: 15px auto;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background-color: #8a6d3b;
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.event-date {
+    font-size: 1.1rem;
+    color: #2c2c2c;
+    margin: 6px 0;
+}
+
+.event-time {
+    font-size: 0.9rem;
+    color: #666666;
+    margin: 4px 0;
+}
+
+.event-divider {
+    height: 1px;
+    width: 60px;
+    background-color: #d4af37;
+    margin: 25px auto;
+}
+
+/* --- Integrasi Peta Lokasi --- */
+.maps-section .address-text {
+    font-size: 0.9rem;
+    color: #ece9e9;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.maps-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #8a6d3b;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 12px 26px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(138, 109, 59, 0.2);
+}
+
+.maps-button:hover {
+    background-color: #70582f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(138, 109, 59, 0.3);
+}
+
+/* --- Dompet Digital / Angpao --- */
+.gift-card {
+    background-color: rgba(250, 248, 245, 0.95);
+    border: 1px solid #eae6df;
+    border-radius: 16px;
+    padding: 30px 20px;
+    max-width: 320px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gift-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #8a6d3b;
+    margin-bottom: 20px;
+}
+
+.bank-icon {
+    height: 28px;
+    margin: 0 auto 15px auto;
+}
+
+.account-number {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    color: #222222;
+    margin: 10px 0 4px 0;
+}
+
+.account-name {
+    font-size: 0.85rem;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Galeri Album Foto --- */
+.gallery-grid-basic {
+    display: grid; /* Perbaikan: Diubah dari 'list-item' ke 'grid' agar gambar tersusun rapi berdampingan */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 40px 0 !important;
+    max-width: 100%;
+}
+
+.gallery-grid-basic .gold-title {
+    grid-column: span 2;
+    margin-bottom: 15px;
+}
+
+.gallery-grid-basic img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-grid-basic img:nth-child(2) {
+    grid-column: span 2;
+    height: 260px;
+}
+
+/* --- Teks Penutup Halaman --- */
+.closing-section {
+    background-color: rgba(250, 248, 245, 0.95); 
+    padding: 40px 20px; /* Perbaikan: Mengubah padding dari '50%' menjadi nilai proporsional agar konten tidak terjepit keluar layar */
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.closing-text {
+    font-size: 0.9rem;
+    color: #4a4a4a; 
+    margin-bottom: 20px;
+}
+
+.closing-salam {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #8a6d3b;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optimalisasi layout untuk ponsel cerdas berlayar sangat kecil */
+@media (max-width: 375px) {
+    .couple-nickname { font-size: 0.75rem; }
+    .child-name-main { font-size: 1.7rem; }
+    .gallery-grid-basic img { height: 140px; }
+    .gallery-grid-basic img:nth-child(2) { height: 190px; }
+}
