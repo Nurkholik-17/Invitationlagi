@@ -103,17 +103,33 @@
             <p class="closing-salam">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
         </section>
     </div>   
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inisialisasi AOS
         AOS.init({ duration: 1000 });
+
+        // Logika Musik yang Aman untuk Browser Modern
         window.addEventListener('click', () => {
-        const music = document.getElementById('bgMusic');
-        if (music.paused) { 
-            music.volume = 0.3; 
-            music.currentTime = 15; // Mengatur mulai dari detik 15
-            music.play().catch(error => console.log("Audio diblokir browser:", error)); 
-        }
-    }, { once: true });
-</script>
+            const music = document.getElementById('bgMusic');
+            
+            if (music.paused) { 
+                music.volume = 0.3; 
+                
+                // Jika audio sudah siap dimuat, langsung atur detiknya
+                if (music.readyState >= 2) {
+                    music.currentTime = 15;
+                    music.play().catch(error => console.log("Audio diblokir:", error));
+                } else {
+                    // Jika belum siap, tunggu event 'canplay' baru lompat ke detik 15
+                    music.addEventListener('canplay', () => {
+                        music.currentTime = 15;
+                        music.play().catch(error => console.log("Audio diblokir:", error));
+                    }, { once: true });
+                    
+                    music.load(); // Paksa browser memuat audio
+                }
+            }
+        }, { once: true });
+    </script>
 </body>
 </html>
