@@ -110,7 +110,7 @@
         const music = document.getElementById('bgMusic');
         if (music.paused) { 
             music.volume = 0.3; 
-            music.currentTime = 15;
+            music.currentTime = 15; // Mengatur mulai dari detik 15
             music.play().catch(error => console.log("Audio diblokir browser:", error)); 
         }
     }, { once: true });
