@@ -12,7 +12,7 @@
 <body>
 
     <audio id="bgMusic" loop>
-        <source src="music/Lagu.mp3" type="audio/mpeg">
+        <source src="music/lagu.mp3" type="audio/mpeg">
     </audio>
 
     <div class="top-container">
@@ -109,12 +109,13 @@
     <script>
         AOS.init({ duration: 1000 });
         window.addEventListener('click', () => {
-            const music = document.getElementById('bgMusic');
-            if (music.paused) { 
-                music.volume = 0.4;
-                music.currentTime = 15;
-                music.play(); }
-        }, { once: true });
-    </script>
+        const music = document.getElementById('bgMusic');
+        if (music.paused) { 
+            music.volume = 0.3; 
+            music.currentTime = 15;
+            music.play().catch(error => console.log("Audio diblokir browser:", error)); 
+        }
+    }, { once: true });
+</script>
 </body>
 </html>
